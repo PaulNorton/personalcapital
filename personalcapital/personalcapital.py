@@ -111,6 +111,18 @@ class PersonalCapital(object):
         """
         self.__session.cookies = requests.utils.cookiejar_from_dict(cookies)
 
+    def get_csrf(self):
+        """
+        return csrf token
+        """
+        return self.__csrf
+
+    def set_csrf(self, csrf):
+        """
+        sets the csrf token
+        """
+        self.__csrf = csrf
+
     def save_session(self, filename):
       session_data = {
           "csrf": self.__csrf,
